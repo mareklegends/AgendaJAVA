@@ -30,6 +30,14 @@ public class Agenda {
   public void borrarPersona(String nombre){
       
   }
+
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+    }
+  
+  
+  
     
     
     
