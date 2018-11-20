@@ -33,25 +33,31 @@ public int nMenu(int nmenu){
         System.out.println("Pulsa un número");
         nmenu = leerprincipio.nextInt(); 
         
+        Agenda a1 = new Agenda("AgendaDeMAREK");
+        
+        
          boolean bandera=true;
           
        do{
         switch (nmenu) {
+            case 10:
+              Menu.mostrarMenuPrincipal();
+        System.out.println("Pulsa un número");
+        nmenu = leerprincipio.nextInt();     
+                break;
+            
+            
             case 1:
             System.out.println("=================================="); 
                 System.out.println("<> AÑADIR PERSONA <>");
-            System.out.println("==================================");
-            String nombreagenda;
-            System.out.println("Nombre de la agenda");
-            Scanner leer = new Scanner(System.in);     
-            nombreagenda = leer.next();
-            Agenda a1 = new Agenda(nombreagenda);
             System.out.println("==================================");
             String nombrep="";
             int edad=0, telefono=0;
             System.out.println("Escribe Nombre, Telefono, Edad");            
             Persona p1 = new Persona(nombrep, telefono, edad);
-             System.out.println("==================================");    
+             System.out.println("==================================");
+         
+             nmenu=10;
                 break;
             
                 
@@ -61,7 +67,7 @@ public int nMenu(int nmenu){
                 System.out.println("<> BUSCAR PERSONA <>");
             System.out.println("==================================");    
                     
-                
+             nmenu=10;
                 break;
                 
             case 3:
@@ -69,7 +75,9 @@ public int nMenu(int nmenu){
             System.out.println("=================================="); 
                 System.out.println("<> BORRAR PERSONA <>");
             System.out.println("==================================");    
-                
+            
+            
+            nmenu=10;
                 break;
             
                 
@@ -79,7 +87,7 @@ public int nMenu(int nmenu){
                 System.out.println("<> CUANTOS SON +18 <>");
             System.out.println("==================================");    
                     
-                
+             nmenu=10;   
                 break;
                 
             case 5:
@@ -88,7 +96,7 @@ public int nMenu(int nmenu){
                 System.out.println("<> BUSQUEDA CON RANGO EDADS <>");
             System.out.println("==================================");   
                 
-                
+             nmenu=10;
                 break;
             
                 
@@ -97,7 +105,8 @@ public int nMenu(int nmenu){
             System.out.println("Saliendo de la agenda");
             System.out.println("==================================");        
             bandera=false;
-                
+            
+                        
                 break;
                 
 
