@@ -12,19 +12,21 @@ package agendajava;
 public class Agenda {
     
     private String nombre;
-    private Persona[] vPersonas = new Persona[20];
+    private Persona[] vPersonas;
 
     public Agenda(String nombre) {
         this.nombre = nombre;
+        vPersonas = new Persona[20];
     }
 
   public void añadirPersona(Persona p1){
       
       for (int i = 0; i < vPersonas.length; i++) {
-          Persona vPersona = vPersonas[i];
-          
+          if (vPersonas[i]==null) {
+               vPersonas[i] = p1;
+               break;
+          }
       }
-      
   }
    
   
@@ -43,13 +45,16 @@ public class Agenda {
   
 
   
-    public void buscarPersona(String nombre){
+    public String buscarPersona(String nombre){
+          String texto="";
+        
         for (int i = 0; i < vPersonas.length; i++) {
               if (vPersonas[i]!=null && vPersonas[i].getNombre().equalsIgnoreCase(nombre)) {
-                  System.out.println(vPersonas[i].toString());
-                  break;
+                   texto += "\n >> Nombre: " + vPersonas[i].getNombre() + " Telefono: " +  vPersonas[i].getTelefono() + " Edad: " + vPersonas[i].getEdad() + " ";
+                    break;
               }
      }
+         return texto;
  }
     
     
@@ -58,12 +63,8 @@ public int cuantosMayores(){
     
     
     for (int i = 0; i < vPersonas.length; i++) {
-        if (vPersonas[i]!=null) {
-            if (vPersonas[i].getEdad()>=18) {
-             contador++;
-            }
-            
-               
+        if (vPersonas[i]!=null && vPersonas[i].getEdad()>=18) {           
+             contador++;                  
         }
         
        
@@ -73,23 +74,18 @@ public int cuantosMayores(){
     
 }
   
-public String personasEntreEdades(int a, int b){
+public String personasEntreEdades(int en1, int en2){
     
     String texto="";
     
        for (int i = 0; i < vPersonas.length; i++) {
         if (vPersonas[i]!=null) {
-            if (vPersonas[i].getEdad()>=a &&  vPersonas[i].getEdad()>=b) {
+            if (vPersonas[i].getEdad()>=en1 &&  vPersonas[i].getEdad()<=en2) {
     
-                texto = ">> Nombre " + vPersonas[i].getNombre() + " | Telefono " + vPersonas[i].getTelefono() + " | Edad " + vPersonas[i].getEdad() + "\n ";
-                
-                
-            }
-            
-               
-        }
-        
-       
+              texto += "\n >> Nombre: " + vPersonas[i].getNombre() + " Telefono: " +  vPersonas[i].getTelefono() + " Edad: " + vPersonas[i].getEdad() + " ";
+
+            }    
+        } 
     }
             return texto;
 

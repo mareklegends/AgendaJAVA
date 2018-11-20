@@ -79,8 +79,10 @@ public class AgendaJAVA {
                 Scanner leerbuscar = new Scanner(System.in);
                 String personabuscar;
                 personabuscar = leerbuscar.nextLine();
-                a1.borrarPersona(personabuscar);  
-                System.out.println("==================================");            
+                a1.buscarPersona(personabuscar);
+                System.out.println("==================================");  
+                
+                System.out.println(a1.buscarPersona(personabuscar));
 
           
                 break;
@@ -110,15 +112,18 @@ public class AgendaJAVA {
                   
             
             
-                if (a1.cuantosMayores()==0) {
+                if (a1.cuantosMayores()!=0) {
                     
-                    System.out.println("No hay mayores de edad en esta agenda");
+                      System.out.println("Hay");                
+                    System.out.println(a1.cuantosMayores());               
+                    System.out.println("Mayores de edad");
+                    
+                    
                     
                 } else {
-                    
-                    System.out.println("Hay");                
-                    a1.cuantosMayores();                 
-                    System.out.println("Mayores de edad");
+                   
+                    System.out.println("No hay mayores de edad en esta agenda");
+                  
                 }           
             
                 
@@ -141,8 +146,10 @@ public class AgendaJAVA {
 
                 en1 = entreN1.nextInt();
                 en2 = entreN2.nextInt();
-
-                a1.personasEntreEdades(en1, en2);           
+                System.out.println("=================================="); 
+                a1.personasEntreEdades(en1, en2);  
+                
+                System.out.println(a1.personasEntreEdades(en1, en2));
                 
                 System.out.println("==================================");
                 
