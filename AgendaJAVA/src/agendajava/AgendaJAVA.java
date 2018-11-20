@@ -54,7 +54,8 @@ public int nMenu(int nmenu){
             String nombrep="";
             int edad=0, telefono=0;
             System.out.println("Escribe Nombre, Telefono, Edad");            
-            Persona p1 = new Persona(nombrep, telefono, edad);
+            Persona p1 = new Persona(nombrep, telefono, edad);            
+            a1.añadirPersona(p1);
              System.out.println("==================================");
          
              nmenu=10;
@@ -65,8 +66,14 @@ public int nMenu(int nmenu){
                 
             System.out.println("=================================="); 
                 System.out.println("<> BUSCAR PERSONA <>");
-            System.out.println("==================================");    
-                    
+            System.out.println("=================================="); 
+            
+            
+            System.out.println("Dime el nombre de la persona que quieres buscar");
+             Scanner leerbuscar = new Scanner(System.in);
+            String personabuscar;
+            personabuscar = leerbuscar.nextLine();
+            a1.borrarPersona(personabuscar);        
              nmenu=10;
                 break;
                 
@@ -76,6 +83,11 @@ public int nMenu(int nmenu){
                 System.out.println("<> BORRAR PERSONA <>");
             System.out.println("==================================");    
             
+            System.out.println("Dime el nombre de la persona que quieres borrar");
+            Scanner leerborrar = new Scanner(System.in);
+            String personaborrar;
+            personaborrar= leerborrar.nextLine();
+            a1.borrarPersona(personaborrar);
             
             nmenu=10;
                 break;
@@ -86,7 +98,21 @@ public int nMenu(int nmenu){
             System.out.println("=================================="); 
                 System.out.println("<> CUANTOS SON +18 <>");
             System.out.println("==================================");    
-                    
+                  
+            
+            
+                if (a1.cuantosMayores()==0) {
+                    System.out.println("No hay mayores de edad en esta agenda");
+                } else {
+                        System.out.println("Hay");
+                
+                 a1.cuantosMayores();
+                 
+                System.out.println("Mayores de edad");
+                }
+            
+            
+                
              nmenu=10;   
                 break;
                 

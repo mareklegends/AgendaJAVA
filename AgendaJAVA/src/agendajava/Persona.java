@@ -27,6 +27,15 @@ public class Persona {
         return texto;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    
 
 
     

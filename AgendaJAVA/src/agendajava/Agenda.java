@@ -18,7 +18,7 @@ public class Agenda {
         this.nombre = nombre;
     }
 
-  public void añadirPersona(){
+  public void añadirPersona(Persona p1){
       
       for (int i = 0; i < vPersonas.length; i++) {
           Persona vPersona = vPersonas[i];
@@ -26,17 +26,52 @@ public class Agenda {
       }
       
   }
+   
+  
   
   public void borrarPersona(String nombre){
+          for (int i = 0; i < vPersonas.length; i++) {
+              if (vPersonas[i]!=null && vPersonas[i].getNombre().equalsIgnoreCase(nombre)) {
+                  vPersonas[i]=null;
+                  break;
+              }
+          
+      }
       
   }
+  
+  
 
-    @Override
-    public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+  
+    public void buscarPersona(String nombre){
+        for (int i = 0; i < vPersonas.length; i++) {
+              if (vPersonas[i]!=null && vPersonas[i].getNombre().equalsIgnoreCase(nombre)) {
+                  System.out.println(vPersonas[i].toString());
+                  break;
+              }
+     }
+ }
+    
+    
+public int cuantosMayores(){
+    int contador = 0;
+    
+    
+    for (int i = 0; i < vPersonas.length; i++) {
+        if (vPersonas[i]!=null) {
+            if (vPersonas[i].getEdad()>=18) {
+             contador++;
+            }
+            
+               
+        }
+        
+       
     }
-  
-  
+    
+     return contador;
+    
+}
   
     
     
