@@ -73,6 +73,29 @@ public int cuantosMayores(){
     
 }
   
+public String personasEntreEdades(int a, int b){
+    
+    String texto="";
+    
+       for (int i = 0; i < vPersonas.length; i++) {
+        if (vPersonas[i]!=null) {
+            if (vPersonas[i].getEdad()>=a &&  vPersonas[i].getEdad()>=b) {
+    
+                texto = ">> Nombre " + vPersonas[i].getNombre() + " | Telefono " + vPersonas[i].getTelefono() + " | Edad " + vPersonas[i].getEdad() + "\n ";
+                
+                
+            }
+            
+               
+        }
+        
+       
+    }
+            return texto;
+
+}
+
+
     
     
     
