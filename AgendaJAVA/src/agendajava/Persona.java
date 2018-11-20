@@ -35,6 +35,10 @@ public class Persona {
         return edad;
     }
 
+    public int getTelefono() {
+        return telefono;
+    }
+
     
 
 

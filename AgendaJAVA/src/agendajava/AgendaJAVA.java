@@ -40,11 +40,7 @@ public int nMenu(int nmenu){
           
        do{
         switch (nmenu) {
-            case 10:
-              Menu.mostrarMenuPrincipal();
-        System.out.println("Pulsa un número");
-        nmenu = leerprincipio.nextInt();     
-                break;
+       
             
             
             case 1:
@@ -58,7 +54,10 @@ public int nMenu(int nmenu){
             a1.añadirPersona(p1);
              System.out.println("==================================");
          
-             nmenu=10;
+             
+              Menu.mostrarMenuPrincipal();
+        System.out.println("Pulsa un número");
+        nmenu = leerprincipio.nextInt(); 
                 break;
             
                 
@@ -73,8 +72,13 @@ public int nMenu(int nmenu){
              Scanner leerbuscar = new Scanner(System.in);
             String personabuscar;
             personabuscar = leerbuscar.nextLine();
-            a1.borrarPersona(personabuscar);        
-             nmenu=10;
+            a1.borrarPersona(personabuscar);  
+            System.out.println("==================================");   
+            
+            
+           Menu.mostrarMenuPrincipal();
+        System.out.println("Pulsa un número");
+        nmenu = leerprincipio.nextInt(); 
                 break;
                 
             case 3:
@@ -88,8 +92,12 @@ public int nMenu(int nmenu){
             String personaborrar;
             personaborrar= leerborrar.nextLine();
             a1.borrarPersona(personaborrar);
+              System.out.println("==================================");   
             
-            nmenu=10;
+            
+           Menu.mostrarMenuPrincipal();
+        System.out.println("Pulsa un número");
+        nmenu = leerprincipio.nextInt(); 
                 break;
             
                 
@@ -113,16 +121,37 @@ public int nMenu(int nmenu){
             
             
                 
-             nmenu=10;   
+              System.out.println("==================================");   
+            
+            
+           Menu.mostrarMenuPrincipal();
+        System.out.println("Pulsa un número");
+        nmenu = leerprincipio.nextInt();   
                 break;
                 
             case 5:
                 
             System.out.println("=================================="); 
                 System.out.println("<> BUSQUEDA CON RANGO EDADS <>");
-            System.out.println("==================================");   
+            System.out.println("=================================="); 
+                System.out.println("Dime entre las edades que quieres buscar");
+           Scanner entreN1 = new Scanner(System.in);
+              Scanner entreN2 = new Scanner(System.in);
+              
+            int en1=0, en2=0;
+            
+            en1 = entreN1.nextInt();
+            en2 = entreN2.nextInt();
+            
+            a1.personasEntreEdades(en1, en2);
+            
                 
-             nmenu=10;
+                System.out.println("==================================");   
+            
+            
+           Menu.mostrarMenuPrincipal();
+        System.out.println("Pulsa un número");
+        nmenu = leerprincipio.nextInt(); 
                 break;
             
                 
